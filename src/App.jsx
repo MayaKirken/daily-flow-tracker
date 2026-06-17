@@ -10,9 +10,28 @@ function App() {
   const [habits, setHabits] = useState(INITIAL_HABITS);
   return (
     <div className="app-container">
-      <h1>Daily Flow Tracker</h1>
-      <p>My intentional space for daily rituals.</p>
-      <p>Tracking {habits.length} habits successfully.</p>
+      <header className="app-header">
+        <h1>Daily Flow Tracker</h1>
+        <p>My intentional space for daily rituals.</p>
+      </header>
+
+      <main className="dashboard">
+        <p>Tracking {habits.length} habits successfully.</p>
+
+        <div className="habit-grid">
+          {habits.map((habit) => {
+            return (
+              <div key={habit.id} className="habit-card">
+                <span className="habit-category">{habit.category}</span>
+                <h3>{habit.name}</h3>
+                <p>{habit.completed ? "✅Done" : "⏳In Progress"}</p>
+              </div>
+            );
+          })};
+        </div>
+      </main>
+ 
+      
     </div>
   );
 }
