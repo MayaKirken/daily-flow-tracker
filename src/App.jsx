@@ -9,7 +9,14 @@ const INITIAL_HABITS = [
 function App() {
   const [habits, setHabits] = useState(INITIAL_HABITS);
   const toggleHabit = (id = 0) => {
-    console.log("Card clicked with ID:", id);
+    setHabits((prevHabits) => {
+      return prevHabits.map((habit) => {
+        if (habit.id === id) {
+          return { ...habit, completed: !habit.completed };
+        }
+        return habit;
+      });
+    })
   }
   return (
     <div className="app-container">
