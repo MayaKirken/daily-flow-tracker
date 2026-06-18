@@ -18,6 +18,8 @@ function App() {
       });
     })
   }
+  const completedCount = habits.filter(habit => habit.completed).length;
+  const sucessPercentage = habits.length > 0 ? Math.round((completedCount / habits.length) * 100) : 0;
   return (
     <div className="app-container">
       <header className="app-header">
