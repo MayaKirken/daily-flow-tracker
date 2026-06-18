@@ -8,6 +8,9 @@ const INITIAL_HABITS = [
 
 function App() {
   const [habits, setHabits] = useState(INITIAL_HABITS);
+  const toggleHabit = (id = 0) => {
+    console.log("Card clicked with ID:", id);
+  }
   return (
     <div className="app-container">
       <header className="app-header">
@@ -21,13 +24,13 @@ function App() {
         <div className="habit-grid">
           {habits.map((habit) => {
             return (
-              <div key={habit.id} className="habit-card">
+              <div key={habit.id} className="habit-card" onClick={() => toggleHabit(habit.id)}>
                 <span className="habit-category">{habit.category}</span>
                 <h3>{habit.name}</h3>
                 <p>{habit.completed ? "✅Done" : "⏳In Progress"}</p>
               </div>
             );
-          })};
+          })}
         </div>
       </main>
  
