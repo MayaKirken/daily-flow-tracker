@@ -37,9 +37,15 @@ function App() {
         </span>
       </div>
       <main className="dashboard">
-        <p>Tracking {habits.length} habits successfully.</p>
+        {habits.length > 0 && <p>Tracking {habits.length} habits successfully.</p>}
 
-        <div className="habit-grid">
+        {habits.length === 0 ? (
+          <div className="empty-state">
+            <p className="empty-state-text">No habits added for today yet! 🌱</p>
+            <p className="empty-string-subtext">Start flowing by adding a new habit above.</p>
+          </div>
+        ) : (
+                  <div className="habit-grid">
           {habits.map((habit) => {
             return (
               <div key={habit.id} className="habit-card" onClick={() => toggleHabit(habit.id)}>
@@ -50,10 +56,9 @@ function App() {
             );
           })}
         </div>
-      </main>
- 
-      
-    </div>
+      )}
+    </main>
+ </div>
   );
 }
 
