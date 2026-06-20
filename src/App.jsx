@@ -30,7 +30,6 @@ function App() {
       <div className="progress-container">
         <div className="progress-bar-track">
           <div className="progress-bar-fill" style={{ width: `${successPercentage}%` }}>
-
           </div>
         </div>
         <span className="progress-text">{successPercentage}% Complete</span>

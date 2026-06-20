@@ -55,3 +55,37 @@
     margin: 0 0 1rem 0;
 }
 
+/* Progress Container */
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 15px 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+/* The empty background track */
+.progress-bar-track {
+    background-color: #e2e8f0;
+    border-radius: 999px;
+    height: 12px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* The actual moving colored bar */
+.progress-bar-fill {
+    background-color: #3182ce;
+    height: 100%;
+    border-radius: 999px;
+    width: 0%;
+    transition: width 0.4s ease-in-out;
+}
