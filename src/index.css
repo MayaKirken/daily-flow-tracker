@@ -89,3 +89,7 @@
     width: 0%;
     transition: width 0.4s ease-in-out;
 }
+
+.progress-text.complete {
+    color: #38a169;
+}

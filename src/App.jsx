@@ -32,7 +32,9 @@ function App() {
           <div className="progress-bar-fill" style={{ width: `${successPercentage}%` }}>
           </div>
         </div>
-        <span className="progress-text">{successPercentage}% Complete</span>
+        <span className={`progress-text ${successPercentage === 100 ? 'complete' : ''}`}>
+          {successPercentage === 100 ? "All Habits Completed! 🎉" : `${successPercentage}% Complete`}
+        </span>
       </div>
       <main className="dashboard">
         <p>Tracking {habits.length} habits successfully.</p>
