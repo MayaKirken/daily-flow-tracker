@@ -93,3 +93,33 @@
 .progress-text.complete {
     color: #38a169;
 }
+
+/* Container for the empty state */
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* Main bold message */
+.empty-state-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+/* Smaller guiding subtext */
+.empty-state-subtext {
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
