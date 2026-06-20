@@ -19,7 +19,7 @@ function App() {
     })
   }
   const completedCount = habits.filter(habit => habit.completed).length;
-  const sucessPercentage = habits.length > 0 ? Math.round((completedCount / habits.length) * 100) : 0;
+  const successPercentage = habits.length > 0 ? Math.round((completedCount / habits.length) * 100) : 0;
   return (
     <div className="app-container">
       <header className="app-header">
@@ -27,6 +27,14 @@ function App() {
         <p>My intentional space for daily rituals.</p>
       </header>
 
+      <div className="progress-container">
+        <div className="progress-bar-track">
+          <div className="progress-bar-fill" style={{ width: `${successPercentage}%` }}>
+
+          </div>
+        </div>
+        <span className="progress-text">{successPercentage}% Complete</span>
+      </div>
       <main className="dashboard">
         <p>Tracking {habits.length} habits successfully.</p>
 
