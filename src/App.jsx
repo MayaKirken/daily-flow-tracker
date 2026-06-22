@@ -6,11 +6,12 @@ const INITIAL_HABITS = [
   { id: 3, name: "React coding practice", category: "Craft", completed: false }
 ];
 
-const [newHabitName, setNewHabitName] = useState('');
-const [newHabitCategory, setNewHabitCategory] = useState('Body');
+
 
 function App() {
   const [habits, setHabits] = useState(INITIAL_HABITS);
+  const [newHabitName, setNewHabitName] = useState('');
+  const [newHabitCategory, setNewHabitCategory] = useState('Body');
   const toggleHabit = (id = 0) => {
     setHabits((prevHabits) => {
       return prevHabits.map((habit) => {
@@ -26,16 +27,18 @@ function App() {
     setHabits([]);
   };
 
+
+  // @ts-ignore
   const addHabit = (e) => {
     e.preventDefault(); 
 
     if(!newHabitName.trim()) return;
 
     const newHabitObj = {
-      id: Date.now();
-      name: newHabitName;
-      category: newHabitCategory;
-      completed: false;
+      id: Date.now(),
+      name: newHabitName,
+      category: newHabitCategory,
+      completed: false
     };
 
     setHabits([...habits, newHabitObj]);
@@ -62,6 +65,15 @@ function App() {
         </span>
       </div>
       <main className="dashboard">
+        <form onSubmit={addHabit} className="habit-form">
+          <input type="text" placeholder="Enter a new daily ritual..." value={newHabitName} onChange={(e) => setNewHabitName(e.target.value)} className="form-input" />
+          <select value="newHabitCategory" onChange={(e) => setNewHabitCategory(e.target.value)} className="form-select">
+            <option value="Body">Body</option>
+            <option value="Mind">Mind</option>
+            <option value="Craft">Craft</option>
+          </select>
+          <button type="submit" className="add-btn">Add Habit ➕</button>
+        </form>
         {habits.length > 0 && (
           <div className="dashboard-controls">
             <p>Tracking {habits.length} habits successfully.</p>
