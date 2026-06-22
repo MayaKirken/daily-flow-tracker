@@ -6,6 +6,9 @@ const INITIAL_HABITS = [
   { id: 3, name: "React coding practice", category: "Craft", completed: false }
 ];
 
+const [newHabitName, setNewHabitName] = useState('');
+const [newHabitCategory, setNewHabitCategory] = useState('Body');
+
 function App() {
   const [habits, setHabits] = useState(INITIAL_HABITS);
   const toggleHabit = (id = 0) => {
@@ -22,6 +25,23 @@ function App() {
   const clearTracker = () => {
     setHabits([]);
   };
+
+  const addHabit = (e) => {
+    e.preventDefault(); 
+
+    if(!newHabitName.trim()) return;
+
+    const newHabitObj = {
+      id: Date.now();
+      name: newHabitName;
+      category: newHabitCategory;
+      completed: false;
+    };
+
+    setHabits([...habits, newHabitObj]);
+    setNewHabitName('');
+    setNewHabitCategory('Body');
+  }
 
   const completedCount = habits.filter(habit => habit.completed).length;
   const successPercentage = habits.length > 0 ? Math.round((completedCount / habits.length) * 100) : 0;
