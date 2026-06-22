@@ -3,7 +3,7 @@
 A lightweight, high-performance React application designed as an intentional space for tracking daily rituals and habits. This dashboard calculates success metrics in real-time and features a fully custom UI built with production-grade, modular CSS.
 
 ## 🚀 Live Demo
-[View Live Application on Netlify](YOUR_NETLIFY_URL_GOES_HERE)
+[View Live Application on Netlify](https://daily-flow-tracker.netlify.app/)
 
 ## 🛠️ Features & Architecture
 - **Full CRUD Logic:** Built with controlled components to seamlessly handle habit creation, state toggling, and entire tracker destruction.
