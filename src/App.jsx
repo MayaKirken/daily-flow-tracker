@@ -18,6 +18,11 @@ function App() {
       });
     })
   }
+
+  const clearTracker = () => {
+    setHabits([]);
+  };
+
   const completedCount = habits.filter(habit => habit.completed).length;
   const successPercentage = habits.length > 0 ? Math.round((completedCount / habits.length) * 100) : 0;
   return (
@@ -37,7 +42,15 @@ function App() {
         </span>
       </div>
       <main className="dashboard">
-        {habits.length > 0 && <p>Tracking {habits.length} habits successfully.</p>}
+        {habits.length > 0 && (
+          <div className="dashboard-controls">
+            <p>Tracking {habits.length} habits successfully.</p>
+            <button onClick={clearTracker} className="clear-btn">
+              Clear Tracker 🗑️
+            </button>
+          </div>
+        )}
+        
 
         {habits.length === 0 ? (
           <div className="empty-state">
