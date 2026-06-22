@@ -1,16 +1,23 @@
-# React + Vite
+# Daily Flow Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, high-performance React application designed as an intentional space for tracking daily rituals and habits. This dashboard calculates success metrics in real-time and features a fully custom UI built with production-grade, modular CSS.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+[View Live Application on Netlify](YOUR_NETLIFY_URL_GOES_HERE)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Features & Architecture
+- **Full CRUD Logic:** Built with controlled components to seamlessly handle habit creation, state toggling, and entire tracker destruction.
+- **Dynamic Progress Engine:** Evaluates completion percentages in real-time, driving a reactive CSS progress bar and conditional success messaging.
+- **Production-Ready Styling:** Structured entirely with standard, reusable CSS classes. Completely free of cluttered inline styles to ensure optimal layout performance and scalability.
+- **Defensive Input Validation:** Implements strict data sanitization (`.trim()`) to prevent empty entries from breaking the dashboard grid layout.
 
-## React Compiler
+## 💻 Tech Stack
+- **Frontend:** React (Hooks, Functional Components)
+- **Styling:** Vanilla CSS3 (Flexbox, Grid, Modern Transitions)
+- **Build Tool:** Vite
+- **Deployment:** Netlify Continuous Deployment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔧 Installation & Local Setup
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/MayaKirken/daily-flow-tracker.git](https://github.com/MayaKirken/daily-flow-tracker.git)
