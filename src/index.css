@@ -151,3 +151,14 @@
 .clear-btn:hover {
     background-color: #bd2130;
 }
+
+/* The main layout container for the form inputs */
+
+.habit-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    background-color: #ffffff;
+    padding: 1rem;
+    border: 1px solid #e2e8f0
+}
